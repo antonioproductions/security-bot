@@ -1,0 +1,16 @@
+{
+  "name": "security-bot-dashboard",
+  "version": "1.0.0",
+  "description": "Dashboard responsive para Security Bot de Antonio productions",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js"
+  },
+  "dependencies": {
+    "better-sqlite3": "^11.10.0",
+    "dotenv": "^16.6.1",
+    "express": "^5.1.0",
+    "express-session": "^1.18.2"
+  }
+}

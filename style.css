@@ -1,0 +1,656 @@
+:root {
+  --bg: #08090d;
+  --panel: #111319;
+  --panel-2: #171923;
+  --border: #272a35;
+  --text: #f5f6f8;
+  --muted: #9298a8;
+  --accent: #5865f2;
+  --accent-light: #8990ff;
+  --green: #23c55e;
+  --danger: #ef4444;
+  --shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  color-scheme: dark;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+  font-family:
+    Inter,
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+/* =========================
+   LANDING
+========================= */
+
+.landing {
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  overflow: hidden;
+  position: relative;
+}
+
+.glow {
+  position: fixed;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: 0.12;
+  pointer-events: none;
+}
+
+.glow-one {
+  background: var(--accent);
+  top: -150px;
+  right: -100px;
+}
+
+.glow-two {
+  background: #8b5cf6;
+  bottom: -200px;
+  left: -150px;
+}
+
+.landing-card {
+  width: min(100%, 860px);
+  padding: 54px;
+  border: 1px solid var(--border);
+  background: rgba(17, 19, 25, 0.82);
+  border-radius: 30px;
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(18px);
+}
+
+/* =========================
+   BRAND
+========================= */
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-icon {
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  background: var(--panel-2);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  font-size: 22px;
+}
+
+.brand strong,
+.brand span {
+  display: block;
+}
+
+.brand strong {
+  font-size: 16px;
+}
+
+.brand span {
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 2px;
+}
+
+.compact {
+  padding: 5px 0;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+  padding: 90px 20px 20px;
+  max-width: 760px;
+}
+
+.eyebrow {
+  color: var(--accent-light);
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  font-weight: 800;
+}
+
+.hero h1 {
+  font-size: clamp(38px, 7vw, 70px);
+  line-height: 1.02;
+  margin: 14px 0 20px;
+  letter-spacing: -0.04em;
+}
+
+.hero h1 span {
+  color: var(--accent-light);
+}
+
+.hero p {
+  color: var(--muted);
+  font-size: 17px;
+  line-height: 1.65;
+  max-width: 680px;
+}
+
+.discord-login {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 18px;
+  padding: 15px 22px;
+  border-radius: 12px;
+  background: var(--accent);
+  font-weight: 800;
+  transition:
+    0.2s transform,
+    0.2s filter;
+}
+
+.discord-login:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.08);
+}
+
+.small {
+  font-size: 12px !important;
+  margin-top: 15px !important;
+}
+
+/* =========================
+   TOPBAR
+========================= */
+
+.topbar {
+  min-height: 72px;
+  padding: 12px max(20px, calc((100vw - 1180px) / 2));
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(8, 9, 13, 0.88);
+  backdrop-filter: blur(18px);
+  position: sticky;
+  top: 0;
+  z-index: 5;
+}
+
+.account {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--panel-2);
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ghost-btn,
+.back {
+  border: 0;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  padding: 8px;
+}
+
+.ghost-btn:hover,
+.back:hover {
+  color: var(--text);
+}
+
+/* =========================
+   CONTAINER
+========================= */
+
+.container {
+  width: min(100% - 40px, 1180px);
+  margin: 0 auto;
+  padding: 58px 0 80px;
+}
+
+.narrow {
+  width: min(100% - 40px, 1000px);
+}
+
+.page-heading {
+  margin-bottom: 30px;
+}
+
+.page-heading h1 {
+  font-size: clamp(34px, 6vw, 52px);
+  margin: 10px 0;
+}
+
+.page-heading p {
+  color: var(--muted);
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* =========================
+   SERVERS
+========================= */
+
+.guild-grid {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(300px, 1fr)
+  );
+  gap: 14px;
+}
+
+.guild-card {
+  min-height: 100px;
+  padding: 18px;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  background: var(--panel);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  transition: 0.2s;
+}
+
+.guild-card.installed:hover {
+  transform: translateY(-2px);
+  border-color: #3c4152;
+  background: #151821;
+}
+
+/*
+  Servidores donde Security Bot
+  todavía no está instalado.
+*/
+.guild-card.not-installed {
+  filter: brightness(0.48);
+  cursor: default;
+}
+
+.server-icon {
+  width: 58px;
+  height: 58px;
+  border-radius: 17px;
+  overflow: hidden;
+  flex: 0 0 auto;
+  background: var(--panel-2);
+  display: grid;
+  place-items: center;
+  font-size: 23px;
+}
+
+.server-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.server-placeholder {
+  color: var(--muted);
+}
+
+.guild-info {
+  min-width: 0;
+  flex: 1;
+}
+
+.guild-info h2 {
+  font-size: 16px;
+  margin: 0 0 5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.guild-info span {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.arrow {
+  color: var(--muted);
+  font-size: 24px;
+}
+
+.add-btn {
+  background: #30323c;
+  padding: 9px 12px;
+  border-radius: 9px;
+  font-size: 12px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.loading-card,
+.empty {
+  padding: 45px;
+  border: 1px dashed var(--border);
+  border-radius: 18px;
+  color: var(--muted);
+  text-align: center;
+  grid-column: 1 / -1;
+}
+
+/* =========================
+   CONFIGURACIÓN
+========================= */
+
+.config-card {
+  border: 1px solid var(--border);
+  background: var(--panel);
+  border-radius: 22px;
+  overflow: hidden;
+}
+
+.config-header {
+  padding: 26px;
+  border-bottom: 1px solid var(--border);
+}
+
+.command-badge {
+  display: inline-block;
+  background: #202331;
+  color: #aab0ff;
+  padding: 7px 10px;
+  border-radius: 8px;
+  font-family: monospace;
+  font-size: 13px;
+}
+
+.config-header h2 {
+  margin: 15px 0 6px;
+}
+
+.config-header p {
+  color: var(--muted);
+  margin: 0;
+  font-size: 14px;
+}
+
+/* =========================
+   OPCIONES
+========================= */
+
+.ticket-option {
+  padding: 22px 26px;
+  border-bottom: 1px solid var(--border);
+}
+
+.ticket-option.invalid {
+  box-shadow: inset 3px 0 var(--danger);
+}
+
+.option-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.option-title span {
+  width: 27px;
+  height: 27px;
+  display: grid;
+  place-items: center;
+  background: #222532;
+  border-radius: 8px;
+  color: #b6bbcb;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.option-title h3 {
+  margin: 0;
+  font-size: 15px;
+}
+
+.fields {
+  display: grid;
+  grid-template-columns: 1fr 1.35fr 0.4fr;
+  gap: 12px;
+}
+
+label {
+  color: #cfd3dc;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+label em {
+  color: var(--muted);
+  font-style: normal;
+  font-weight: 500;
+  margin-left: 4px;
+}
+
+input {
+  width: 100%;
+  margin-top: 7px;
+  border: 1px solid var(--border);
+  background: #0c0e13;
+  color: var(--text);
+  border-radius: 10px;
+  padding: 12px 13px;
+  outline: none;
+  transition:
+    0.2s border-color,
+    0.2s box-shadow;
+}
+
+input:focus {
+  border-color: #6269f4;
+  box-shadow: 0 0 0 3px rgba(88, 101, 242, 0.12);
+}
+
+input::placeholder {
+  color: #666d7d;
+}
+
+/* =========================
+   GUARDAR
+========================= */
+
+.save-btn {
+  margin: 22px 26px 26px;
+  width: calc(100% - 52px);
+  border: 0;
+  border-radius: 11px;
+  padding: 14px;
+  background: var(--green);
+  color: #06120a;
+  font-weight: 900;
+  cursor: pointer;
+  transition:
+    0.2s filter,
+    0.2s transform;
+}
+
+.save-btn:hover {
+  filter: brightness(1.08);
+  transform: translateY(-1px);
+}
+
+.save-btn:disabled {
+  opacity: 0.65;
+  cursor: wait;
+}
+
+/* =========================
+   ALERTAS
+========================= */
+
+.alert {
+  margin: 18px 26px 0;
+  padding: 12px 14px;
+  border-radius: 10px;
+  font-size: 13px;
+}
+
+.alert.success {
+  background: rgba(35, 197, 94, 0.12);
+  color: #73e29a;
+  border: 1px solid rgba(35, 197, 94, 0.25);
+}
+
+.alert.error {
+  background: rgba(239, 68, 68, 0.1);
+  color: #ff8585;
+  border: 1px solid rgba(239, 68, 68, 0.2);
+}
+
+.hidden {
+  display: none;
+}
+
+/* =========================
+   MÓVIL
+========================= */
+
+@media (max-width: 700px) {
+  .landing {
+    padding: 14px;
+  }
+
+  .landing-card {
+    padding: 28px 22px;
+    border-radius: 22px;
+  }
+
+  .hero {
+    padding: 65px 0 5px;
+  }
+
+  .hero h1 {
+    font-size: 42px;
+  }
+
+  .hero p {
+    font-size: 15px;
+  }
+
+  .discord-login {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .topbar {
+    padding: 10px 15px;
+  }
+
+  .account > span {
+    display: none;
+  }
+
+  .container,
+  .narrow {
+    width: min(100% - 28px, 1000px);
+    padding-top: 38px;
+  }
+
+  .guild-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .guild-card {
+    min-height: 88px;
+  }
+
+  .guild-card.not-installed {
+    flex-wrap: wrap;
+  }
+
+  .add-btn {
+    margin-left: 72px;
+  }
+
+  .ticket-option {
+    padding: 20px 16px;
+  }
+
+  .config-header {
+    padding: 22px 16px;
+  }
+
+  .fields {
+    grid-template-columns: 1fr;
+  }
+
+  .save-btn {
+    width: calc(100% - 32px);
+    margin: 18px 16px 20px;
+  }
+
+  .alert {
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+}
+
+/* =========================
+   PANTALLAS MUY PEQUEÑAS
+========================= */
+
+@media (max-width: 380px) {
+  .hero h1 {
+    font-size: 36px;
+  }
+
+  .guild-card {
+    padding: 14px;
+  }
+
+  .server-icon {
+    width: 50px;
+    height: 50px;
+  }
+
+  .add-btn {
+    margin-left: 64px;
+  }
+}
